@@ -2,25 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Catch The Rocket</title>
+  <title>Catch Only The Apple</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
 <section class="game">
-  <h2>🍎 Catch Only The Apple!</h2>
-  <p>Time: <span id="time">30</span>s</p>
-  <p>Score: <span id="score">0</span></p>
+  <h2>🍎 Catch Only The Apple</h2>
+
+  <div class="info">
+    <div>Time: <span id="time">30</span>s</div>
+    <div>Score: <span id="score">0</span></div>
+    <div>High: <span id="highScore">0</span></div>
+  </div>
+
   <button id="startBtn">Start Game</button>
 
   <div id="gameArea">
     <div class="fruit" id="apple">🍎</div>
     <div class="fruit" id="orange">🍊</div>
-    <div class="fruit" id="pineapple">🍍</div>
+    <div class="fruit" id="strawberry">🍓</div>
   </div>
+
+  <!-- Overlay -->
+  <div id="gameOverScreen">
+    <div class="gameOverBox">
+      <h3 id="gameOverText"></h3>
+      <button id="restartBtn">Play Again</button>
+    </div>
+  </div>
+
 </section>
 
 <script src="script.js"></script>
-
 </body>
 </html>
