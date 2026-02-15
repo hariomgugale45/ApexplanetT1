@@ -1,49 +1,39 @@
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: #0f172a;
   color: white;
   text-align: center;
+  margin: 0;
+  padding: 20px;
 }
 
-header {
-  padding: 40px 20px;
+.game {
+  margin-top: 20px;
 }
 
-.card {
-  background: white;
-  color: black;
-  width: 300px;
+#gameArea {
+  position: relative;
+  width: 80%;
+  height: 400px;
   margin: 20px auto;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  border: 3px solid white;
+  background: #1e293b;
+  overflow: hidden;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-button {
-  background: #1e3c72;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
+#rocket {
+  position: absolute;
+  font-size: 40px;
   cursor: pointer;
+  display: none;
+}
+
+#startBtn {
+  padding: 10px 20px;
   font-size: 16px;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #2a5298;
-  transform: scale(1.05);
-}
-
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  border-radius: 5px;
 }

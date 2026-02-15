@@ -9,8 +9,12 @@ let time = 15;
 let timer;
 
 function moveRocket() {
-  const x = Math.random() * (gameArea.clientWidth - 40);
-  const y = Math.random() * (gameArea.clientHeight - 40);
+  const maxX = gameArea.clientWidth - 40;
+  const maxY = gameArea.clientHeight - 40;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
   rocket.style.left = x + "px";
   rocket.style.top = y + "px";
 }
@@ -26,14 +30,17 @@ startBtn.addEventListener("click", () => {
   time = 15;
   scoreDisplay.textContent = score;
   timeDisplay.textContent = time;
+
   rocket.style.display = "block";
   moveRocket();
+
+  clearInterval(timer);
 
   timer = setInterval(() => {
     time--;
     timeDisplay.textContent = time;
 
-    if (time === 0) {
+    if (time <= 0) {
       clearInterval(timer);
       rocket.style.display = "none";
       alert("Game Over! Your score: " + score);
