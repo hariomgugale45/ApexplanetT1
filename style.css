@@ -37,3 +37,19 @@ body {
   color: black;
   border-radius: 5px;
 }
+#gameArea {
+  position: relative;
+  width: 80%;
+  height: 400px;
+  margin: 20px auto;
+  border: 3px solid white;
+  background: #1e293b;
+  overflow: hidden;
+}
+
+.fruit {
+  position: absolute;
+  font-size: 40px;
+  cursor: pointer;
+  display: none;
+}
