@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const restartBtn = document.getElementById("restartBtn");
 
   let score = 0;
-  let time = 30;
+  let time = 15;
   let timer;
   let isGameRunning = false;
 
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function startGame() {
     score = 0;
-    time = 30;
+    time = 15;
 
     scoreDisplay.textContent = score;
     timeDisplay.textContent = time;
