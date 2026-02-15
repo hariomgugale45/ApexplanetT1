@@ -10,12 +10,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  
+  min-height: 100vh;
   color: white;
 }
 
 .game {
-  width: 520px;
+  width: 650px;
   background: #111827;
   padding: 30px;
   border-radius: 15px;
@@ -55,13 +56,14 @@ body {
 
 #gameArea {
   position: relative;
-  height: 300px;
+  height: 400px;      /* was 300px */
   margin-top: 20px;
   background: #0f172a;
   border-radius: 10px;
   overflow: hidden;
   border: 2px solid #38bdf8;
 }
+
 
 /* 🎯 Simple Emoji Fruits */
 .fruit {
