@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let score = 0;
   let time = 30;
   let timer;
+  let isGameRunning = false;
 
   let highScore = localStorage.getItem("highScore") || 0;
   highScoreDisplay.textContent = highScore;
@@ -35,10 +36,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function endGame(message) {
     clearInterval(timer);
+    isGameRunning = false;
 
     apple.style.display = "none";
     orange.style.display = "none";
     strawberry.style.display = "none";
+
+    startBtn.textContent = "Start Game";
 
     if (score > highScore) {
       highScore = score;
@@ -59,13 +63,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     gameOverScreen.classList.remove("active");
 
-    apple.style.display = "flex";
-    orange.style.display = "flex";
-    strawberry.style.display = "flex";
+    apple.style.display = "block";
+    orange.style.display = "block";
+    strawberry.style.display = "block";
 
     moveAll();
-
-    clearInterval(timer);
 
     timer = setInterval(() => {
       time--;
@@ -78,7 +80,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
       moveAll();
     }, 1000);
+
+    isGameRunning = true;
+    startBtn.textContent = "Stop Game";
   }
+
+  function stopGame() {
+    clearInterval(timer);
+    isGameRunning = false;
+
+    apple.style.display = "none";
+    orange.style.display = "none";
+    strawberry.style.display = "none";
+
+    startBtn.textContent = "Start Game";
+  }
+
+  startBtn.addEventListener("click", function () {
+    if (!isGameRunning) {
+      startGame();
+    } else {
+      stopGame();
+    }
+  });
+
+  restartBtn.addEventListener("click", startGame);
 
   apple.addEventListener("click", () => {
     score++;
@@ -93,8 +119,5 @@ document.addEventListener("DOMContentLoaded", function () {
   strawberry.addEventListener("click", () => {
     endGame("You clicked Strawberry! Game Over 😅");
   });
-
-  startBtn.addEventListener("click", startGame);
-  restartBtn.addEventListener("click", startGame);
 
 });
